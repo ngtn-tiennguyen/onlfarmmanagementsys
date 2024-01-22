@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý thông tin vùng trồng</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <style>
+    .is-hidden {
+      display: none;
+    }
+
+    #mau-cay-menu {
+      color: #FFFFCC;
+    }
+
+    #mau-info-form {
+      background-color: #33CC33;
+    }
+  </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="images/green-tree-logo.jpg" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="" class="nav-link btnhome">Home</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-light-primary elevation-4 bg-success">
+      <!-- Brand Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="images/tree-growing.gif" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light" id="mau-cay-menu"><b>QL Vùng Trồng</b></span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="images/frozen-elsa.gif" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block" id="mau-cay-menu">Nguyễn Ngọc Kiều Tiên</a>
+          </div>
+        </div>
+
+        <!-- DANH SÁCH CÁC MENU -->
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- QUẢN LÝ NGƯỜI DÙNG -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="mau-cay-menu">
+                <i class="nav-icon fa fa-user-circle-o"></i>
+                <p>
+                  Quản lý người dùng
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item menunongho">
+                  <a href="#nongho" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Nông hộ</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--KHỞI TẠO VÙNG TRỒNG -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="mau-cay-menu">
+                <i class="nav-icon fa fa-th-list"></i>
+                <p>
+                  Khởi tạo vùng trồng
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item menuvungtrong">
+                  <a href="#vungtrong" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Vùng trồng</p>
+                  </a>
+                </li>
+                <li class="nav-item menuthua">
+                  <a href="#thua" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Thửa</p>
+                  </a>
+                </li>
+                <li class="nav-item menulo">
+                  <a href="#lo" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Lô</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--DANH MỤC CANH TÁC -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="mau-cay-menu">
+                <i class="nav-icon fas fa-tree mr-1"></i>
+                <p>
+                  Danh mục canh tác
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item menunhomctrong">
+                  <a href="#nhomctrong" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Nhóm cây trồng</p>
+                  </a>
+                </li>
+                <li class="nav-item menucaytrong">
+                  <a href="#caytrong" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Cây trồng</p>
+                  </a>
+                </li>
+                <li class="nav-item menudvt">
+                  <a href="#dvt" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Đơn vị tính</p>
+                  </a>
+                </li>
+                <li class="nav-item menucongdoan">
+                  <a href="#congdoan" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Công đoạn</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--QUẢN LÝ CANH TÁC -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="mau-cay-menu">
+                <i class="nav-icon fas fa-chart-pie mr-1"></i>
+                <p>
+                  Quản lý canh tác
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item menuqlvt">
+                  <a href="#qlvt" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Quản lý vùng trồng</p>
+                  </a>
+                </li>
+                <li class="nav-item menudsvt">
+                  <a href="#danhsachvt" class="nav-link" id="mau-cay-menu">
+                    &nbsp;&nbsp;&nbsp;<i class="nav-icon fas fa-arrow-circle-right"></i>
+                    <p>Danh sách vùng trồng</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 btnhome"><a href="" style="color: rgb(77, 194, 77);">Trang chủ</a></h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right breadcrumbcurrent">
+              </ol>
+            </div><!-- /.col -->
+          </div>
+          <div class="formhome" id="trangchu">
+            <!-- /.row Hàng số 1-->
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>Thông tin</h3>
+
+                    <p>Vùng trồng</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="#" class="small-box-footer menudsvt">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>Nông hộ</h3>
+
+                    <p>Quản lý</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsnh">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>Vùng trồng</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-map"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsvt">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>Thửa</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsthua">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col Hết hàng 1 -->
+            </div>
+            <!-- Hàng số 2-->
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>Lô</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-nuclear"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdslo">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>Nhóm cây trồng</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-grid"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsnct">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>Cây trồng</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-leaf"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsct">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>Đơn vị tính</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pricetag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdsdvt">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col Hết hàng 2-->
+            </div>
+            <!-- Hàng số 3-->
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>Công đoạn</h3>
+
+                    <p>Danh sách</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-aperture"></i>
+                  </div>
+                  <a href="#" class="small-box-footer clickdscd">Click <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+              <!-- ./col Hết hàng số 3 -->
+            </div>
+          </div> <!-- form trang chủ-->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) nội dung -->
+          <!-- <div class="menuhome"> -->
+          <!-- /.card-body -->
+
+
+          <!-- /.card -->
+          <!-- </div> -->
+
+
+          <!-- BẮT ĐẦU MỞ FORM -->
+
+          <!-- Form Nông hộ -->
+          <div class="row formnongho is-hidden" id="nongho">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin nông hộ
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Mã nông hộ (*)</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control txtmanongho" id="inputEmail3" placeholder="Mã nông hộ">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Tên nông hộ (*)</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control txttennongho" id="inputPassword3"
+                            placeholder="Tên nông hộ">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="inputPassword3" class="col-sm-6 col-form-label">Giới tính</label>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <select class="form-control gt">
+                              <option value="1">Nam</option>
+                              <option value="0">Nữ</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Năm sinh</label>
+                        <div class="col-sm-8">
+                          <input type="date" class="form-control namsinh" id="inputEmail3" placeholder="ngày/tháng/năm">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Số điện thoại (*)</label>
+                        <div class="col-sm-8">
+                          <input type="number" class="form-control sdt" id="inputPassword3" placeholder="Số điện thoại">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control email" id="inputPassword3" placeholder="Email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Địa chỉ (*)</label>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control diachi" id="inputPassword3" placeholder="Địa chỉ">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Hình ảnh</label>
+                        <div class="col-sm-8">
+                          <input type="file" id="imgNH" class="btnupload" accept="image/*" name="image" />
+                          <a href="#">
+                            <label for="imgNH" class="custom-file-upload" id="imgNH">
+                              <img width="25px" style="border:0px" src="images/iconuploadimage.png" />Chọn ảnh</label>
+                          </a>
+                          <div id="preview"><img class="preview" src="" height="100px" width="100px" /></div><br>
+                        </div>
+                        <div id="err"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemnongho"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoanongho"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluunongho"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlainongho"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các nông hộ hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimnongho">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat btntimnongho"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã nông hộ</th>
+                              <th>Tên nông hộ</th>
+                              <th>Giới tính</th>
+                              <th>Ngày sinh</th>
+                              <th>Số điện thoại</th>
+                              <th>Email</th>
+                              <th>Địa chỉ</th>
+                              <th>Hình ảnh</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListNH">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagenongho">
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Nông hộ -->
+
+          <!-- Danh sách NH-->
+          <div class="card-footer formdsnh is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các nông hộ hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimnongho">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat btntimnongho"><i class="fa fa-search"
+                          aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã nông hộ</th>
+                      <th>Tên nông hộ</th>
+                      <th>Giới tính</th>
+                      <th>Ngày sinh</th>
+                      <th>Số điện thoại</th>
+                      <th>Email</th>
+                      <th>Địa chỉ</th>
+                      <th>Hình ảnh</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListNH">
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagenongho">
+
+
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc Danh sách NH-->
+
+          <!-- Form Vùng trồng -->
+          <div class="row formvungtrong is-hidden" id="vungtrong">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin vùng trồng
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã vùng trồng (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txtmavt" id="inputEmail3" placeholder="Mã vùng trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên vùng trồng (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttenvt" id="inputPassword3"
+                          placeholder="Tên vùng trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Diện tích (m<sup>2</sup>)</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control txtdientichvt" id="inputPassword3"
+                          placeholder="Diện tích">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Tỉnh-Thành phố</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttinhtp" id="inputEmail3" placeholder="Tỉnh-Thành phố">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemvt"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoavt"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluuvt"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaivt"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các vùng trồng hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimvt">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimvt"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã vùng trồng</th>
+                              <th>Tên vùng trồng</th>
+                              <th>Diện tích (m<sup>2</sup>)</th>
+                              <th>Tỉnh-Thành phố</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListVT">
+                            <!-- <tr>
+                              <td>1.</td>
+                              <td>VL0001</td>
+                              <td>Năm roi</td>
+                              <td>Vĩnh Long</td>
+                              <td>10000</td>
+                              <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                                  class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                              </td>
+                            </tr> -->
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagevt">
+                        <!-- <ul class="pagination pagination-sm m-0 float-right">
+                          <li class="page-item"><a class="page-link" href="#">«</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Vùng trồng -->
+          <!-- Danh sách vùng trồng-->
+          <div class="card-footer formdsvt is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các vùng trồng hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimvt">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimvt"><i class="fa fa-search"
+                          aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã vùng trồng</th>
+                      <th>Tên vùng trồng</th>
+                      <th>Diện tích (m<sup>2</sup>)</th>
+                      <th>Tỉnh-Thành phố</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListVT">
+                    <!-- <tr>
+                      <td>1.</td>
+                      <td>VL0001</td>
+                      <td>Năm roi</td>
+                      <td>Vĩnh Long</td>
+                      <td>10000</td>
+                      <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                          class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                      </td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagevt">
+                <!-- <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">«</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc Danh sách vùng trồng-->
+
+          <!-- Form Thửa -->
+          <div class="row formthua is-hidden" id="thua">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin thửa
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Vùng trồng</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbvtbythua">
+                          <option></option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã thửa (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txtmathua" id="inputEmail3" placeholder="Mã thửa">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên thửa (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttenthua" id="inputPassword3" placeholder="Tên thửa">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Diện tích (m<sup>2</sup>)</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control txtdientichthua" id="inputPassword3"
+                          placeholder="Diện tích">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemthua"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoathua"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluuthua"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaithua"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các thửa hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimthua">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimthua"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã thửa</th>
+                              <th>Tên thửa</th>
+                              <th>Diện tích (m<sup>2</sup>)</th>
+                              <th>Vùng trồng</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListThua">
+                            <!-- <tr>
+                            <td>1.</td>
+                            <td>VL0001</td>
+                            <td>Năm roi</td>
+                            <td>Vĩnh Long</td>
+                            <td>10000</td>
+                            <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                                class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                            </td>
+                          </tr> -->
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagethua">
+                        <!-- <ul class="pagination pagination-sm m-0 float-right">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      </ul> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Thửa -->
+          <!-- Danh sách Thửa-->
+          <div class="card-footer formdsthua is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các thửa hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimthua">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimthua"><i class="fa fa-search"
+                          aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã thửa</th>
+                      <th>Tên thửa</th>
+                      <th>Diện tích (m<sup>2</sup>)</th>
+                      <th>Vùng trồng</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListThua">
+                    <!-- <tr>
+                    <td>1.</td>
+                    <td>VL0001</td>
+                    <td>Năm roi</td>
+                    <td>Vĩnh Long</td>
+                    <td>10000</td>
+                    <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                        class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                    </td>
+                  </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagethua">
+                <!-- <ul class="pagination pagination-sm m-0 float-right">
+                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">»</a></li>
+              </ul> -->
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc danh sách Thửa-->
+
+          <!-- Form Lô -->
+          <div class="row formlo is-hidden" id="lo">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin lô
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Thửa</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbthua">
+                          <option></option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã lô (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txtmalo" id="inputEmail3" placeholder="Mã lô">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên lô (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttenlo" id="inputPassword3" placeholder="Tên lô">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Diện tích (m<sup>2</sup>)</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control txtdientichlo" id="inputPassword3"
+                          placeholder="Diện tích">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemlo"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoalo"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluulo"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlailo"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các lô hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimlo">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimlo"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã lô</th>
+                              <th>Tên lô</th>
+                              <th>Diện tích (m<sup>2</sup>)</th>
+                              <th>Thửa</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListLo">
+                            <!-- <tr>
+                            <td>1.</td>
+                            <td>VL0001</td>
+                            <td>Năm roi</td>
+                            <td>Vĩnh Long</td>
+                            <td>10000</td>
+                            <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                                class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                            </td>
+                          </tr> -->
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagelo">
+                        <!-- <ul class="pagination pagination-sm m-0 float-right">
+                              <li class="page-item"><a class="page-link" href="#">«</a></li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">»</a></li>
+                             </ul> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Lô -->
+          <!-- Danh sách Lô -->
+          <div class="card-footer formdslo">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các lô hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimlo">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimlo"><i class="fa fa-search"
+                          aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã lô</th>
+                      <th>Tên lô</th>
+                      <th>Diện tích (m<sup>2</sup>)</th>
+                      <th>Thửa</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListLo">
+                    <!-- <tr>
+                    <td>1.</td>
+                    <td>VL0001</td>
+                    <td>Năm roi</td>
+                    <td>Vĩnh Long</td>
+                    <td>10000</td>
+                    <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                        class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                    </td>
+                  </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagelo">
+                <!-- <ul class="pagination pagination-sm m-0 float-right">
+                      <li class="page-item"><a class="page-link" href="#">«</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                     </ul> -->
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc danh sách Lô-->
+
+          <!-- Form Nhóm cây trồng -->
+          <div class="row formnhomctrong is-hidden" id="nhomctrong">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin nhóm cây trồng
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã nhóm cây trồng (*)</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control txtmanhomctrong" id="inputEmail3"
+                          placeholder="Mã nhóm cây trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên nhóm cây trồng (*)</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control txttennhomctrong" id="inputPassword3"
+                          placeholder="Tên nhóm cây trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Mô tả</label>
+                      <div class="col-sm-10">
+                        <textarea name="motanhomctrong" class="form-control motanhomctrong" id="motanhomctrong"
+                          placeholder="Mô tả"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemnhomctrong"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoanhomctrong"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluunhomctrong"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlainhomctrong"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách nhóm cây trồng hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimnhomctrong">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimnhomctrong"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: auto">#</th>
+                              <th>Mã nhóm cây trồng</th>
+                              <th>Tên nhóm cây trồng</th>
+                              <th>Mô tả</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListNCTrong">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagenhomctrong">
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Nhóm cây trồng -->
+          <!-- Danh sách nhóm cây trồng-->
+          <div class="card-footer formdsnct is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách nhóm cây trồng hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimnhomctrong">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimnhomctrong"><i
+                          class="fa fa-search" aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: auto">#</th>
+                      <th>Mã nhóm cây trồng</th>
+                      <th>Tên nhóm cây trồng</th>
+                      <th>Mô tả</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListNCTrong">
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagenhomctrong">
+
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc danh sách nhóm cây trồng-->
+
+          <!-- Form Cây trồng -->
+          <div class="row formcaytrong is-hidden" id="caytrong">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin cây trồng
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nhóm cây trồng</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbnct">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cây trồng (*)</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control txtmacaytrong" id="inputEmail3"
+                          placeholder="Mã cây trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên cây trồng (*)</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control txttencaytrong" id="inputPassword3"
+                          placeholder="Tên cây trồng">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tóm tắt</label>
+                      <div class="col-sm-10">
+                        <textarea name="tomtatcaytrong" class="form-control tomtatcaytrong" id="tomtatcaytrong"
+                          placeholder="Tóm tắt"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemcaytrong"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoacaytrong"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluucaytrong"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaicaytrong"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các cây trồng hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimcaytrong">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat btntimcaytrong"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: auto">#</th>
+                              <th>Mã cây trồng</th>
+                              <th>Tên cây trồng</th>
+                              <th>Nhóm cây trồng</th>
+                              <th>Tóm tắt</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListCTrong">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagecaytrong">
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Cây trồng -->
+          <!-- Danh sách Cây trồng-->
+          <div class="card-footer formdsct is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các cây trồng hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimcaytrong">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat btntimcaytrong"><i
+                          class="fa fa-search" aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: auto">#</th>
+                      <th>Mã cây trồng</th>
+                      <th>Tên cây trồng</th>
+                      <th>Nhóm cây trồng</th>
+                      <th>Tóm tắt</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListCTrong">
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagecaytrong">
+
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc danh sách cây trồng-->
+
+          <!-- Form Đơn vị tính -->
+          <div class="row formdvt is-hidden" id="dvt">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin đơn vị tính
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã đơn vị tính (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txtmadvt" id="inputEmail3" placeholder="Mã đơn vị tính">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên đơn vị tính (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttendvt" id="inputPassword3"
+                          placeholder="Tên đơn vị tính">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemdvt"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoadvt"><i class="fa fa-trash-o"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluudvt"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaidvt"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các đơn vị tính hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimdvt">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimdvt"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã đơn vị tính</th>
+                              <th>Tên đơn vị tính</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListDVT">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagedvt">
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Đơn vị tính -->
+          <!-- Danh sách DVT-->
+          <div class="card-footer formdsdvt is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các đơn vị tính hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimdvt">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimdvt"><i
+                          class="fa fa-search" aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã đơn vị tính</th>
+                      <th>Tên đơn vị tính</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListDVT">
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagedvt">
+
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc ds DVT-->
+
+          <!-- Form Công đoạn -->
+          <div class="row formcongdoan is-hidden" id="congdoan">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin công đoạn
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã công đoạn (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txtmacongdoan" id="inputEmail3"
+                          placeholder="Mã công đoạn">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Tên công đoạn (*)</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control txttencongdoan" id="inputPassword3"
+                          placeholder="Tên công đoạn">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemcongdoan"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoacongdoan"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;
+                      Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluucongdoan"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaicongdoan"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card">
+                      <div class="card-header bg-success">
+                        <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                          Danh sách các công đoạn hiện có</h3>
+                      </div>
+                      <div class="card-header">
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimcongdoan">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat txttimcongdoan"><i
+                                  class="fa fa-search" aria-hidden="true"></i>
+                                &nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã công đoạn</th>
+                              <th>Tên công đoạn</th>
+                              <th>Thao tác</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListCDoan">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer clearfix numberpagecongdoan">
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form Công đoạn -->
+          <!-- Danh sách công đoạn-->
+          <div class="card-footer formdscd is-hidden">
+            <div class="card">
+              <div class="card-header bg-success">
+                <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                  Danh sách các công đoạn hiện có</h3>
+              </div>
+              <div class="card-header">
+                <div class="col-sm-4">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="txttimcongdoan">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-outline-info btn-flat txttimcongdoan"><i
+                          class="fa fa-search" aria-hidden="true"></i>
+                        &nbsp;Tìm</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Mã công đoạn</th>
+                      <th>Tên công đoạn</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody class="addListCDoan">
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix numberpagecongdoan">
+
+              </div>
+            </div>
+          </div>
+          <!-- Kết thúc ds Công đoạn-->
+
+          <!-- Form QLVT -->
+          <div class="row formqlvt is-hidden" id="qlvt">
+            <div class="col-lg-12">
+              <div class="card card-info">
+                <div class="card-header" id="mau-info-form">
+                  <h3 class="card-title"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    Điền thông tin vùng trồng cần quản lý
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Mã quản lý (*)</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control maqlvt" id="inputEmail3" placeholder="Mã quản lý">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Mã nông hộ (*)</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control manhql" id="inputPassword3" placeholder="Mã nông hộ">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--vùng trồng qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Vùng trồng</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbvtbyqlvt">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--thửa qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Thửa</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbthuabyvt">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--lô qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Lô</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cblobythua">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--nhóm cây trồng qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nhóm cây trồng</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbnctbyqlvt">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--cây trồng qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Cây trồng</label>
+                      <div class="col-sm-8">
+                        <select class="form-control cbctbynct">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--số lượng qlvt-->
+                      <table>
+                        <tr>
+                          <label for="inputPassword3" class="col-sm-2 col-form-label">Số lượng</label>
+                          <div class="col-sm-4">
+                            <input type="number" class="form-control soluong" placeholder="Số lượng">
+                          </div>
+                          <td>
+                            <!--đơn vị tính qlvt-->
+                            <div class="auto">
+                              <select class="form-control cbdvt">
+                                <option></option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="form-group row">
+                      <!--công đoạn qlvt-->
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Công đoạn</label>
+                      <div class="col-sm-3">
+                        <select class="form-control cbcongdoanbyvt">
+                          <!-- <option></option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--ngày bắt đầu qlvt-->
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Ngày bắt đầu</label>
+                      <div class="col-sm-3">
+                        <input type="date" class="form-control ngaybd" placeholder="ngày/tháng/năm">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <!--ngày kết thúc qlvt-->
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Ngày kết thúc</label>
+                      <div class="col-sm-3">
+                        <input type="date" class="form-control ngaykt" placeholder="ngày/tháng/năm">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-outline-success btnthemqlvt"><i class="fa fa-plus-square"
+                        aria-hidden="true"></i>&nbsp;Thêm</button>
+                    <button type="button" class="btn btn-outline-danger btnxoaqlvt"><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Xóa</button>
+                    <button type="button" class="btn bg-gradient-success btnluuqlvt"><i class="fa fa-floppy-o"
+                        aria-hidden="true"></i>&nbsp;Lưu</button>
+                    <button type="button" class="btn btn-outline-secondary float-right btnlamlaiqlvt"><i
+                        class="fa fa-refresh"></i>&nbsp;Làm Lại</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc Form QLVT -->
+
+          <!-- Form DSVT -->
+          <div class="row formdsvtql is-hidden" id="dsvt">
+            <div class="col-lg-12">
+              <!-- /.card-body -->
+              <div class="card-horizontal">
+                <div class="card">
+                  <div class="card-header bg-success">
+                    <h3 class="card-title"><i class="fa fa-pagelines" aria-hidden="true"></i>&nbsp;
+                      Danh sách các vùng trồng được quản lý</h3>
+                  </div>
+                  <div class="card-header">
+                    <table border="0" style="width: 100%;">
+                      <tr>
+                        <td class="col-sm-4">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="txttimqlvt">
+                            <span class="input-group-append">
+                              <button type="button" class="btn btn-outline-info btn-flat btntimqlvt"><i
+                                  class="fa fa-search" aria-hidden="true"></i>&nbsp;Tìm</button>
+                            </span>
+                          </div>
+                        </td>
+                        </td>
+                        <td class="col-sm-4">
+                          <button type="button" class="btn btn-outline-success btn-sm float-right btnthemqlvt"><i
+                              class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Thêm</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table class="table table-bordered auto">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Mã quản lý</th>
+                          <th>Vùng trồng</th>
+                          <th>Thửa</th>
+                          <th>Lô</th>
+                          <th>Nhóm cây trồng</th>
+                          <th>Cây trồng</th>
+                          <th>Số lượng</th>
+                          <th>Đơn vị</th>
+                          <th>Ngày bắt đầu</th>
+                          <th>Ngày kết thúc</th>
+                          <th>Công đoạn</th>
+                          <th>Tên nông hộ</th>
+                          <th>Thao tác</th>
+                        </tr>
+                      </thead>
+                      <tbody class="addListQLVT">
+                        <!-- <tr>
+                            <td>1.</td>
+                            <td>VL0001</td>
+                            <td>Năm roi</td>
+                            <td>Vĩnh Long</td>
+                            <td>10000</td>
+                            <td><span class="badge bg-danger"><i class="fa fa-eye"></i>Xem</span>&nbsp;<span
+                                class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa</span>
+                            </td>
+                          </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer clearfix numberpageqlvt">
+                    <!-- <ul class="pagination pagination-sm m-0 float-right">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      </ul> -->
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+          </div>
+          <!-- kết thúc Form DSVT -->
+
+
+          <!-- KẾT THÚC ĐÓNG FORM-->
+
+          <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2022 <a href="https://adminlte.io"
+          style="color: rgb(77, 194, 77);">quanlyvungtrong.vn</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 2.9.8
+      </div>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  <!---->
+  <!-- Liên kết thư viện bootbox -->
+  <script src="js/bootbox/bootbox.min.js"></script>
+  <!-- Liên kết file menu -->
+  <script src="js/menu.js"></script>
+  <!-- Liên kết file chung common -->
+  <script src="js/common.js"></script>
+  <!-- Liên kết file xuly_form_vungtrong -->
+  <script src="js/khoi_tao_vung_trong/xuly_form_vungtrong.js"></script>
+  <!-- Liên kết file xuly_form_thua -->
+  <script src="js/khoi_tao_vung_trong/xuly_form_thua.js"></script>
+  <!-- Liên kết file xuly_form_lo -->
+  <script src="js/khoi_tao_vung_trong/xuly_form_lo.js"></script>
+  <!-- Liên kết file xuly_form_nhomcaytrong-->
+  <script src="js/danh_muc_canh_tac/xuly_form_nhomcaytrong.js"></script>
+  <!-- Liên kết file xuly_form_caytrong-->
+  <script src="js/danh_muc_canh_tac/xuly_form_caytrong.js"></script>
+  <!-- Liên kết file xuly_form_donvitinh -->
+  <script src="js/danh_muc_canh_tac/xuly_form_donvitinh.js"></script>
+  <!-- Liên kết file xuly_form_congdoan -->
+  <script src="js/danh_muc_canh_tac/xuly_form_congdoan.js"></script>
+  <!-- Liên kết file xuly_form_quanlyvungtrong -->
+  <script src="js/quan_ly_canh_tac/xuly_form_quanlyvungtrong.js"></script>
+  <!-- Liên kết file xuly_form_nongho -->
+  <script src="js/quan_ly_nguoi_dung/xuly_form_nongho.js"></script>
+</body>
+
+</html>
